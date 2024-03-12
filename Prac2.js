@@ -44,7 +44,34 @@ let calcLimas = (cantRoda, tipoLimas) => {
 let bebida = "All or Nothing";
 let cantRodajas = 15;
 let Limas = ["pequeño", "mediano", "grande"];
+let turno = 60;
 
 // Resultados
 console.log(`El tiempo que tarda la bebida ${bebida} es: ${getTimeMix(bebida)} minutos`);
 console.log(`La cantidad de limas a cortar es: ${calcLimas(cantRodajas, Limas)}`);
+
+
+// Generar más de 30 bebidas aleatorias
+const bebidasTotales = [];
+for (let i = 0; i <= 30; i++) {
+    const bebidaRandom = Bebidas[Math.floor(Math.random() * Bebidas.length)];
+    bebidasTotales.push(bebidaRandom);
+}
+
+// Identificar las bebidas pendientes en el cambio de turno
+function bebidasPendientes(bebidasTotales, turno) {
+    
+    let suma = 0;
+
+    for (let i = 0; i < bebidasTotales.length -1; i++) {
+        suma += bebidasTotales[i][1];
+        if(suma >= turno){
+            console.log(`Las bebidas que no puede preparar Limey son: `, bebidasTotales[i]);
+          }
+    }
+    console.log(`El tiempo trabajado por liMey es: `, suma);
+    if( suma < turno){
+   
+    }
+}
+bebidasPendientes(bebidasTotales, turno);
