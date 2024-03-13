@@ -3,10 +3,9 @@ const readline = require('readline');
 const rl = readline.createInterface({
     input:process.stdin,
     output:process.stdout
-});
-
-//archivo para realizar el primer ejericio
-function determinarAccionesDisponibles(caballeroDespierto, arqueroDespierto, prisioneroDespierto, perroPresente) {
+        )}
+//Funcion para determinar cuales de las 4 operaciones estan disponibles
+function determinarAccionesDisponibles(caballeroDespierto, arqueroDespierto, pricioneroDespierto, perroPresente){
     const accionesDisponibles=[];
     
 //Accion 1: Ataque rapido
